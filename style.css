@@ -88,6 +88,7 @@ header nav a.active{
     width: 400px;
     display: block;
     margin: 0 auto;    
+    filter: drop-shadow(6px 6px 47px #0ef);
 }
 .hero-content{
     display: flex;
@@ -174,8 +175,7 @@ header nav a.active{
 
 .service-card{
     display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px 10px;
     width: 80%;
     margin: 20px auto;
@@ -226,6 +226,7 @@ header nav a.active{
 .about .about-pic{
     width: 80%;
     margin: 0 auto;
+    filter: drop-shadow(6px 6px 60px #0ef);
     
 }
 .about-details{
@@ -239,6 +240,7 @@ header nav a.active{
     text-align: center;
     color: #fff;
     font-weight: 600;
+    margin-bottom: 40px;
 }
 .about-section h1 span{
     color: #0ef;
@@ -252,26 +254,128 @@ header nav a.active{
     font-weight: 700;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .contact-section{
     grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-template-areas: 
+    't t t t '
+    'e e c c';
+    height: 600px;
+    grid-column-gap: 20px;
+    margin-bottom: 100px;
 }
+
+.contact-section .contact-title{
+    grid-area: t;
+    text-align: center;
+}
+
+.contact-title h1{
+    color: #fff;
+}
+.contact-section h1 span{
+    color: #0ef;
+}
+.contact-title p{
+    color: #fff;
+    margin-top: 10px;
+}
+
+.contact-section p a{
+    color: #0ef;
+    font-weight: 600;
+}
+
+
+.contact-section .contact-email{
+    grid-area: e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+ .contact-email img{
+    width: 80%;
+    filter: drop-shadow(6px 6px 47px #0ef);
+
+}
+.contact-section form{
+    grid-area: c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-section form .form-text{
+    position: relative;
+}
+.contact-section form .form-text input, .contact-section textarea{
+    background-color: #1e1e1e;
+    outline: none;
+    border: 1px solid #0ef;
+    height: 50px;
+    padding: 16px 20px;
+    color: #fff;
+    font-size: 16px;
+    width: 80%;
+    border-radius: 20px;
+    position: relative;
+}
+
+.contact-section form .form-text label{
+    position: absolute;
+    left: 12px;
+    top: 14px;
+    color: #0ef;
+    padding: 0 5px;
+    background: var(--header-background);
+    transition: .3s;
+    pointer-events: none;
+    
+}
+.contact-section .messages-box{
+    height: 100px !important;
+    width: 80%;
+    
+}
+.form-text input:focus ~ label{
+    top: -9px;
+}
+.contact-section textarea:focus ~ label{
+    top: -9px;
+}
+.contact-section form input[type='submit']{
+    width: 70%;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 20px;
+    outline: none;
+    margin-left: 10px;
+    cursor: pointer;
+    background: none;
+    color: #0ef;
+    box-shadow: 0 0 30px #0ef;
+    transition: .2s;
+}
+.contact-section form input[type='submit']:hover{
+    box-shadow: 0 0 50px #0ef;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .footer-section{
     grid-column: 1 / -1;
     display: grid;
@@ -281,7 +385,7 @@ header nav a.active{
     'cp cp cp';
     height: auto;
     justify-content: space-between;
-    padding-left:20px ;
+    padding-left: 0 20px ;
     grid-column-gap: 20px;
 }
 
@@ -296,37 +400,76 @@ header nav a.active{
     position: absolute;
     bottom: -6px;
     left: 0;
-    border:2px solid red;
-    width: 30px;
+    border:1px solid #0ef;
+    width: 40px;
 }
-.footer-section p{
-    color: #fff;
-    opacity: .2;
-}
+
 .footer-section .about-us ul{
     display: flex;
     align-items: center;
     margin-top: 10px;
-    gap: 10px;
+    gap: 15px;
 }
-.about-us ul li{
 
-}
 .footer-section .about-us{
     grid-area: a;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
-
+.footer h3{
+    font-size: 20px;
+}
+.footer p{
+    color: #ffffffa1;
+    line-height: 20px;
+}
+ .about-us ul li a{
+    color: #fff;
+    font-size: 20px;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    transition: .3s;
+    box-shadow:inset 0 0 0px #0ef;
+}
+.about-us ul li a:hover{
+    background-color: #0ef;
+    color: #1e1e1e;
+    box-shadow: 0 0 10px #0ef;
+}
 .footer-section .quick-links{
     grid-area: q;
 }
-
+.quick-links ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.footer-section .quick-links ul li a{
+    color: rgba(255, 255, 255, 0.6);
+    transition: .2s;
+    line-height: 20px;
+}
+.quick-links ul li a:hover{
+    color: #fff;
+    padding-left: 5px;
+}
 .footer-section .contact-info{
     grid-area: c;
+}
+.footer-section .contact-info ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.contact-info ul li, .contact-info ul li a {
+    color: #fff;
 }
 
 .footer-section .copy-right{
     grid-area: cp;
     text-align: center;
     padding: 20px;
-    color: #ffffffaf;
+    color: #ffffff62;
 }
