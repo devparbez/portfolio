@@ -27,7 +27,7 @@ body{
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 100px repeat(4, 1fr) ;
+    grid-template-rows: 100px repeat(5, 1fr) ;
 }
 
 header{
@@ -71,9 +71,9 @@ header nav a.active{
 .hero-section{
     display: flex;
     align-items: center;
-    flex-direction: wrap;
+    flex-wrap: wrap;
     justify-content: space-around;
-    height: 700px;
+    height: auto;
     width: 100%;
     grid-column: 1 / -1;
 }
@@ -159,7 +159,8 @@ header nav a.active{
 
 .service-section{
     grid-column: 1 / -1;
-    height: 600px;
+    margin-top: 70px;
+    height: auto;
     width: 100%;
 }
 
@@ -213,7 +214,7 @@ header nav a.active{
 
 .about-section{
     grid-column: 1/ -1;
-    height: 600px;
+    height: auto;
     margin-top: 20px;
 }
 
@@ -221,19 +222,22 @@ header nav a.active{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+    height: auto;
     margin-top: 10px;
+    
 }
 .about .about-pic{
     width: 80%;
     margin: 0 auto;
     filter: drop-shadow(6px 6px 60px #0ef);
-    
 }
 .about-details{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
     line-height: 20px;
+    height: auto;
 }
 
 .about-section h1{
@@ -261,10 +265,12 @@ header nav a.active{
     grid-template-areas: 
     't t t t '
     'e e c c';
-    height: 600px;
-    grid-column-gap: 20px;
+    height: auto;
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 50px 20px;
     margin-bottom: 100px;
 }
+
 
 .contact-section .contact-title{
     grid-area: t;
@@ -286,7 +292,6 @@ header nav a.active{
     color: #0ef;
     font-weight: 600;
 }
-
 
 .contact-section .contact-email{
     grid-area: e;
@@ -362,29 +367,17 @@ header nav a.active{
 }
 .contact-section form input[type='submit']:hover{
     box-shadow: 0 0 50px #0ef;
-}
-
-
-
-
-
-
-
-
-
-
-
-
+} 
 
 .footer-section{
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns:repeat(3, 1fr) ;
+    grid-template-columns:repeat(3, 1fr);
     grid-template-areas: 
     'a q c'
     'cp cp cp';
     height: auto;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0 20px;
     grid-column-gap: 20px;
 }
