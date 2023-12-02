@@ -8,7 +8,9 @@
     text-decoration: none;
     text-transform: capitalize;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 :root{
     --body-bg-color:# ;
     --header-background: #1e1e1e;
@@ -35,6 +37,8 @@ header{
     align-items: center;
     justify-content: space-around;
     grid-column: 1/ -1;
+    z-index: 1000000;
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
 }
 
 header .logo a{
@@ -467,41 +471,49 @@ header nav a.active{
     color: #ffffff62;
 }
 
-.nav-toggle{
-    display: none !important;
+header .nav-toggle{
+    display: none;
     color: #fff;
 }
-.nav-closs{
+header .nav-closs{
     color: #fff;
-    left: 160px;
-    position: relative;
+    display: none;
 }
-
 @media screen and (max-width: 768px) {
-    .nav-toggle {
-        display: block !important;
-        z-index: 100;
+    
+    header .nav-toggle{
+        display: block;
     }
     header nav{
         position: fixed;
-        width: 0;
-        height: 100vh;
-        background: rgba(0,0,0,.2);
         right: 0;
         top: 0;
-        padding: 20px 0 0 30px;
-        z-index: 10;
-        transition: .3s;
-    }
-    .active.nav-bar{
-        width: 260px;
-    }
-   
-    header nav {
         display: flex;
         flex-direction: column;
+        width: 250px;
+        padding: 30px 20px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.3);
+        transition: .3s;
+        transform: translateX(250px);
     }
+    nav.active{
+        transform: translateX(0px);
+    }
+    header .nav-closs{
+        display: block;
+        text-align: center;
+        font-size: 22px;
+        z-index: 1111;
+        /* right: -90px; */
+        /* top: 10px; */
+    }
+
     
+    .hero-content{
+        padding-left: 20px;
+    }
+   
     .hero-section{
         gap: 30px;
         margin-bottom: 70px;
