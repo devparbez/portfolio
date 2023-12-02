@@ -1,0 +1,69 @@
+@media screen and (max-width: 768px) {
+    
+    header .nav-toggle{
+        display: block;
+    }
+    header nav{
+        position: fixed;
+        right: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        padding: 30px 20px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.3);
+        transition: .3s;
+        transform: translateX(250px);
+    }
+    nav.active{
+        transform: translateX(0px);
+    }
+    header .nav-closs{
+        display: block !important;
+        text-align: center;
+        font-size: 22px;
+        z-index: 1111;
+        /* right: -90px; */
+        /* top: 10px; */
+    }
+
+    
+    .hero-content{
+        padding-left: 20px;
+    }
+   
+    .hero-section{
+        gap: 30px;
+        margin-bottom: 70px;
+    }
+    .service-section .service-card{
+        grid-template-columns: 
+        repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .about-section .about{
+        grid-template-columns: 1fr;
+        margin-bottom: 70px;
+    }
+    .about-section .about-details{
+        padding-left: 20px;
+    }
+    .contact-section{
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-section form{
+        align-self: center;
+        justify-self: center;
+        width: 80%;
+    }
+    .footer-section{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px;
+    }
+    .footer-section .about-us p{
+        width: 95%;
+    }
+
+ }
