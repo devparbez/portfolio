@@ -239,6 +239,7 @@ header nav a.active{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 20px;
     line-height: 20px;
     height: auto;
@@ -474,10 +475,12 @@ header nav a.active{
 header .nav-toggle{
     display: none;
     color: #fff;
+    cursor: pointer;
 }
 header .nav-closs{
     color: #fff;
-    display: none;
+    display: none !important;
+    cursor: pointer;
 }
 @media screen and (max-width: 768px) {
     
@@ -501,7 +504,7 @@ header .nav-closs{
         transform: translateX(0px);
     }
     header .nav-closs{
-        display: block;
+        display: block !important;
         text-align: center;
         font-size: 22px;
         z-index: 1111;
